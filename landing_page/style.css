@@ -1,0 +1,254 @@
+/* Global Styles */
+:root {
+    --primary: #4CAF50;
+    --dark-bg: #0E1117;
+    --card-bg: #1E1E1E;
+    --text-light: #FAFAFA;
+    --text-dim: #B0B0B0;
+    --accent: #00E676;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    background-color: rgba(14, 17, 23, 0.95);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #333;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--text-dim);
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.btn-contact {
+    background-color: var(--primary);
+    color: white !important;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5% 5%;
+    min-height: 90vh;
+    gap: 2rem;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(to right, #fff, #b0b0b0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: var(--text-dim);
+    margin-bottom: 2rem;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: transform 0.2s;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+}
+
+.btn-secondary {
+    border: 1px solid var(--text-dim);
+    color: var(--text-light);
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+    transform: translateY(-3px);
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(76, 175, 80, 0.2);
+    border: 1px solid #333;
+}
+
+/* Features Section */
+.features {
+    padding: 5rem 5%;
+    background-color: #161920;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s;
+    border: 1px solid #333;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary);
+}
+
+.feature-card i {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+}
+
+/* Team Section */
+.team {
+    padding: 5rem 5%;
+}
+
+.team-container {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    text-align: center;
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    width: 250px;
+}
+
+.avatar {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+/* Download Section */
+.download {
+    padding: 5rem 5%;
+    text-align: center;
+}
+
+.download-box {
+    background: linear-gradient(135deg, #1E1E1E 0%, #0E1117 100%);
+    padding: 3rem;
+    border-radius: 20px;
+    border: 1px solid var(--primary);
+}
+
+.btn-download {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 1rem 3rem;
+    background-color: white;
+    color: black;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Footer */
+footer {
+    padding: 3rem 5%;
+    background-color: #000;
+    border-top: 1px solid #333;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    color: var(--text-dim);
+    padding-top: 2rem;
+    border-top: 1px solid #222;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .logo { font-size: 1.2rem; }
+}

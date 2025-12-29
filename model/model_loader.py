@@ -2,9 +2,13 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import torch
 
 def load_model():
-    model_name = "textattack/bert-base-uncased-ag-news"
+    model_name = "textattack/distilbert-base-uncased-ag-news"
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    print(f"Loading model: {model_name} on device: {device}")
+
     tokenizer = AutoTokenizer.from_pretrained(model_name)
     model = AutoModelForSequenceClassification.from_pretrained(model_name)
+    model.to(device)
     model.eval()
     return model, tokenizer
 

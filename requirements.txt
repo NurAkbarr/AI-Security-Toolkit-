@@ -3,3 +3,6 @@ transformers
 datasets
 textattack
 scikit-learn
+streamlit
+watchdog
+pandas
